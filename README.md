@@ -1,2 +1,8 @@
-node_webkit_bingo_caller
+Bingo Caller
 ========================
+
+make deps
+
+make mac
+or
+make win

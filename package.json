@@ -1,0 +1,26 @@
+{
+  "name": "BingoCaller",
+  "main": "bingocaller/index.html",
+  "window": {
+	  "icon"      : "bingocaller/gfx/balls/ball_90.png",
+	  "toolbar"   : false,
+	  "show"      : false,
+	  "resizable" : true,
+	  "fullscreen": true,
+	  "frame"     : false
+  },
+  "dependencies": {
+  	"ejs":"0.8.4"
+  },
+  "maintainers" : [
+	  {
+	    "name"  : "setitesuk",
+	    "email" : "setitesuk@gmail.com"
+	  }
+  ],
+  "bugs" : "github.com/setitesuk/node_webkit_bingo_caller/issues",
+  "keywords" : [
+	  "Bingo",
+	  "games"
+  ]
+}
