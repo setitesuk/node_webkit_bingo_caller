@@ -48,7 +48,6 @@ $(document).ready(function() {
 
   $('#begin_line').click( function () {
     clear_main();
-    util.error('begin_line');
     populate_content(game_data, 'draw_number');
   } );
 
@@ -61,12 +60,24 @@ $(document).ready(function() {
 });
 
 function clear_main () {
-  console.log('remove_content');
   $('#main_content').remove();
-  util.error($('#content').html())
 }
 
 function populate_content (data, file) {
   var content_ejs = EJS.compile(fs.readFileSync('bingocaller/views/'+file+'.ejs', 'utf8'));
   $('#content').html(content_ejs(data));
+  init_game_buttons();
+}
+
+function init_game_buttons() {
+  
+  $('#draw').click( function () {
+    game_data.remaining_balls.shuffle();
+    var ball = game_data.remaining_balls.shift();
+    game_data.drawn_balls[ball] = true;
+    util.error(util.inspect(game_data));
+    console.log(game_data.remaining_balls.length);
+    $("#ball").html('<img id="ball_'+ball+'" src="gfx/balls/ball_'+ball+'.png" alt="'+ball+'" title="'+ball+'" />');
+  } );
+
 }
