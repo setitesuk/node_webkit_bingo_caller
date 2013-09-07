@@ -1,0 +1,17 @@
+<h2>Check Numbers</h2>
+<table id="check_numbers">
+  <tr>
+    <% for (var i = 1; i < max_ball+1; i++) { %>
+      <% if ( i%10 === 1 ) { %>
+        </tr><tr>
+      <% } %>
+      <span class="<% if ( drawnNumbers[i] ) { %>drawn<% } %>"><%= i %></span>
+
+</table>
+<% if ( calling_for_house ) { %>
+  <button id="house_ok">OK</button>
+  <button id="house_call_bad">Bad Call</button>
+<% } else { %>
+  <button id="line_ok">Continue for House</button>
+  <button id="line_call_bad">Bad Call</button>
+<% } %>

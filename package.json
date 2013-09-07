@@ -6,8 +6,8 @@
 	  "toolbar"   : false,
 	  "show"      : false,
 	  "resizable" : true,
-	  "fullscreen": true,
-	  "frame"     : false
+	  "fullscreen": false,
+	  "frame"     : true
   },
   "dependencies": {
   	"ejs":"0.8.4"

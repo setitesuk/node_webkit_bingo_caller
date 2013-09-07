@@ -1,2 +1,12 @@
+<div id="main_content">
 <h1>Bingo Caller</h1>
-<a href="" id="begin">Click to start a game</a>
+
+<p>
+  <label for="max_draw">Max draw number:</label><select id="max_draw" name="name"><% for ( var i = 1; i < 91; i++ ) { %><option value="<%= i %>"<% if ( i === 90 ) { %> selected="selected"<% } %>><%= i %></option><% } %></select>
+</p>
+
+<p>
+  <button id="begin_line" class="start line_and_house">Click to start a game (Line and Full House)</button>
+  <button id="begin_fh" class="start house_only">Click to start a game (Full House Only )</button>
+</p>
+</div>
