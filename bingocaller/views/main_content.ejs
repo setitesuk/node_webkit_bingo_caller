@@ -1,9 +1,29 @@
 <div id="main_content">
 <h1>Bingo Caller</h1>
 
-<p>
+<div>
+  <span class="float_left">Calls: </span>
+  <div class="onoffswitch float_left">
+    <input type="checkbox" name="calls_on" class="onoffswitch-checkbox" id="calls_on" checked>
+    <label class="onoffswitch-label" for="calls_on">
+      <div class="onoffswitch-inner"></div>
+      <div class="onoffswitch-switch"></div>
+    </label>
+  </div>
+  <div class="clear_floats"></div>
+  <span class="float_left">Default Max Ball: </span>
+  <div class="onoffswitch float_left">
+    <input type="checkbox" name="default_ball_count" class="onoffswitch-checkbox" id="default_ball_count" checked>
+    <label class="onoffswitch-label" for="default_ball_count">
+      <div class="onoffswitch-inner"></div>
+      <div class="onoffswitch-switch"></div>
+    </label>
+  </div>
+  <div id="max_draw_select" class="hidden">
   <label for="max_draw">Max draw number:</label><select id="max_draw" name="name"><% for ( var i = 1; i < 91; i++ ) { %><option value="<%= i %>"<% if ( i === 90 ) { %> selected="selected"<% } %>><%= i %></option><% } %></select>
-</p>
+  </div>
+  <div class="clear_floats"></div>
+</div>
 
 <p>
   <button id="begin_line" class="line_and_house">Start Line &amp; House Game</button>

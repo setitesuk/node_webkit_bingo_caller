@@ -1,14 +1,17 @@
 <h2>Check Numbers</h2>
 <h3>Last Number Called: <%= last_call %></h3>
 <table id="check_numbers">
+  <thead></thead>
+  <tbody>
   <tr>
-    <% for (var i = 1; i < max_ball+1; i++) { %>
+    <% for (var i = 1; i < max_ball + 1; i++) { %>
       <% if ( i%10 === 1 ) { %>
         </tr><tr>
       <% } %>
       <td><span class="check_nums <% if ( drawn_balls[i] ) { %>drawn<% } else { %>undrawn<% } %>">&nbsp;<%= i %>&nbsp;</span></td>
     <% } %>
   </tr>
+  <tbody>
 </table>
       
 

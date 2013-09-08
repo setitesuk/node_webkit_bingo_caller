@@ -12,6 +12,7 @@ deps:
 
 # I downloaded zip.exe & unzip.exe from http://stahlworks.com/dev/?tool=zipunzip
 win:
+	if exist bingocaller.nw del bingocaller.nw /q
 	if exist dist\win rmdir dist\win /s /q
 	if exist tmp rmdir tmp /s /q
 	zip -r bingocaller.nw bingocaller package.json node_modules

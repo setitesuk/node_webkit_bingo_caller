@@ -30,16 +30,6 @@ $(document).ready(function() {
 	  win.showDevTools();
   });
 
-  $('#max_draw').change( function () {
-    var val = $('#max_draw').val();
-    game_data.max_ball = val;
-    val++;
-    game_data.remaining_balls = [];
-    for ( var i = 1; i < val; i++ ) {
-      game_data.remaining_balls.push(i);
-    }
-  } );
-
 });
 
 function clearMain () {
@@ -58,6 +48,30 @@ function populateContent (data, file) {
 
 function initGameButtons() {
   
+  $('#max_draw').change( function () {
+    var val = $('#max_draw').val();
+    val = parseInt(val);
+    game_data.max_ball = val;
+    val++;
+    game_data.remaining_balls = [];
+    for ( var i = 1; i < val; i++ ) {
+      game_data.remaining_balls.push(i);
+    }
+  } );
+
+  $('#calls_on').change( function() {
+     game_data.calls_on = game_data.calls_on ? false : true;
+  } );
+
+  $('#default_ball_count').change( function() {
+     game_data.default_ball_count = game_data.default_ball_count ? false : true;
+     if ( ! game_data.default_ball_count ) {
+       $('#max_draw_select').removeClass('hidden');
+     } else {
+       $('#max_draw_select').addClass('hidden');
+     }
+  } );
+
   $('#draw').click( function () { drawBall(); } );
 
   $('#call').click( function () {
@@ -111,12 +125,16 @@ function initGameButtons() {
 function resetGameData() {
   game_data = {
     ball: null,
+    default_ball_count: true,
     max_ball: 90,
     calling_for_house: null,
-    last_call: null
+    last_call: null,
+    drawn_balls: {},
+    remaining_balls: [],
+    last_five_calls: [],
+    calls_on: true
   };
-  game_data.drawn_balls = {};
-  game_data.remaining_balls = [];
+  
   for ( var i = 1; i < 91; i++ ) {
     game_data.remaining_balls.push(i);
   }
@@ -130,7 +148,26 @@ function drawBall () {
     $("#draw").attr('disabled','disabled');
   }
   game_data.last_call = ball;
+  game_data.last_five_calls.push(ball);
+
+  if ( game_data.last_five_calls.length > 5 ) {
+    game_data.last_five_calls.shift();
+  }
+
   game_data.drawn_balls[ball] = true;
-  $("#ball").html('<img class="drawn_ball" id="ball_'+ball+'" src="gfx/balls/ball_'+ball+'.png" alt="'+ball+'" title="'+ball+'" /><div class="call">'+calls[ball]+'</div>');
+
+  var html = '<img class="drawn_ball" id="ball_'+ball+'" src="gfx/balls/ball_'+ball+'.png" alt="'+ball+'" title="'+ball+'" />';
+
+  if ( game_data.calls_on ) {
+    html += '<div class="call">'+calls[ball]+'</div>';
+  }
+
+  html += '<table><thead></thead><tbody><tr>'
+  for (var i = 0; i < game_data.last_five_calls.length; i++ ) {
+    html += '<td>' + game_data.last_five_calls[i] + '</td>';
+  }
+  html += '</tr></tbody></table>';
+  
+  $("#ball").html(html);
 }
 

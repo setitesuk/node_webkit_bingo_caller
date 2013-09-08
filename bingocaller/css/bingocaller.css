@@ -2,6 +2,10 @@
   font-size:40px;
 }
 
+.hidden {
+  display:none;
+}
+
 .drawn {
   color: red;
 }
@@ -69,8 +73,74 @@ button.quit, button.bad_call {
   background: -webkit-gradient(linear, left top, left bottom, from(#f20020), color-stop(0.51, #fff), to(#f20020));
 }
 
-
 img.drawn_ball {
   width:90%;
   height:80%;
 }
+
+.float_left {
+  float:left;
+}
+
+.clear_floats {
+  clear:both;
+}
+
+.onoffswitch {
+    position: relative; width: 116px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+
+.onoffswitch-checkbox {
+    display: none;
+}
+
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #000000; border-radius: 50px;
+}
+
+.onoffswitch-inner {
+    width: 200%; margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    float: left; width: 50%; height: 41px; padding: 0; line-height: 41px;
+    font-size: 25px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 14px;
+    background-color: #EEEEEE; color: #16F230;
+}
+
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 14px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+
+.onoffswitch-switch {
+    width: 31px; margin: 5px;
+    background: #A1A1A1;
+    border: 2px solid #000000; border-radius: 50px;
+    position: absolute; top: 0; bottom: 0; right: 71px;
+    -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; 
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+    background-color: #16F230; 
+}
+
+
