@@ -6,7 +6,7 @@
 	  "toolbar"   : false,
 	  "show"      : false,
 	  "resizable" : true,
-	  "fullscreen": false,
+	  "fullscreen": true,
 	  "frame"     : true
   },
   "dependencies": {
