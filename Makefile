@@ -37,5 +37,6 @@ mac:
 	mv node-webkit.app dist/mac/bingocaller.app
 	mv bingocaller.nw dist/mac/bingocaller.app/Contents/Resources/app.nw
 	rm dist/mac/bingocaller.app/Contents/Resources/nw.icns
+	sips -s format icns resources/bingocaller512x512.png --out dist/mac/bingocaller.app/Contents/Resources/bingocaller.icns
 	perl -i -pe 's{nw[.]icns}{bingocaller.icns}smxg' dist/mac/bingocaller.app/Contents/Info.plist
 	perl -i -pe 's{node[-]webkit[ ]App}{Bingo Caller}smxg' dist/mac/bingocaller.app/Contents/Info.plist
