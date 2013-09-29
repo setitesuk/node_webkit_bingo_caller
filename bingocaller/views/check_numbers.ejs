@@ -1,6 +1,6 @@
-<h2>Check Numbers</h2>
-<h3>Last Number Called: <%= last_call %></h3>
-<table id="check_numbers">
+<div class="center main_title">Check Numbers</div>
+<div class="center secondary_title">Last Number Called: <%= last_call %></div>
+<table id="check_numbers" class="center">
   <thead></thead>
   <tbody>
   <tr>
@@ -13,9 +13,7 @@
   </tr>
   <tbody>
 </table>
-      
-
-</table>
+<div class="center option_buttons">
 <% if ( calling_for_house ) { %>
   <button id="house_ok" class="ok">OK</button>
   <button id="house_call_bad" class="bad_call">Bad Call</button>
@@ -26,3 +24,4 @@
   <button id="line_call_bad" class="bad_call">Bad Call</button>
   <button id="quit" class="quit">Quit Game</button>
 <% } %>
+</div>
