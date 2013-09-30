@@ -146,6 +146,7 @@ function drawBall () {
   if ( ! ball ) {
     $("#ball").html('<h2>No More Balls To Draw</h2>');
     $("#draw").attr('disabled','disabled');
+    return;
   }
   game_data.last_call = ball;
   game_data.last_five_calls.push(ball);
@@ -159,12 +160,12 @@ function drawBall () {
   var html = '<img class="drawn_ball" id="ball_'+ball+'" src="gfx/balls/ball_'+ball+'.png" alt="'+ball+'" title="'+ball+'" />';
 
   if ( game_data.calls_on ) {
-    html += '<div class="calls center">'+calls[ball]+'</div>';
+    html += '<div class="calls center last_nums">'+calls[ball]+'</div>';
   }
 
   html += '<table class="center"><thead></thead><tbody><tr>'
   for (var i = 0; i < game_data.last_five_calls.length; i++ ) {
-    html += '<td style="text-align:center;">' + game_data.last_five_calls[i] + '</td>';
+    html += '<td class="calls check_nums">|' + game_data.last_five_calls[i] + '|</td>';
   }
   html += '</tr></tbody></table>';
   

@@ -11,6 +11,10 @@ body {
   font-size:40px;
 }
 
+.last_nums {
+  font-size:40px;
+}
+
 .hidden {
   display:none;
 }
