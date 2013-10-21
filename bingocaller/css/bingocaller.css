@@ -109,6 +109,18 @@ img.drawn_ball {
   height:80%;
 }
 
+img.main_logo {
+  margin-left:20%;
+  width:60%;
+  height:60%;
+}
+
+img.mini_logo {
+  margin-left:40%;
+  width:20%;
+  height:20%;
+}
+
 .float_left {
   float:left;
 }
