@@ -1,6 +1,7 @@
 {
   "name": "BingoCaller",
   "main": "bingocaller/index.html",
+  "version": "1.0",
   "window": {
 	  "icon"      : "bingocaller/gfx/balls/ball_90.png",
 	  "toolbar"   : false,
