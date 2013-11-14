@@ -21,7 +21,7 @@ win:
 	mkdir dist\win tmp
 	dist\tools\unzip -d tmp -o src\$(NWWIN).zip
 	dist\tools\Resourcer -op:del -src:tmp\nw.exe -type:14 -name:IDR_MAINFRAME
-	dist\tools\Resourcer -op:add -src:tmp\nw.exe -type:14 -name:IDR_MAINFRAME -file:resources\metrichor72x72.png -lang:1033
+	dist\tools\Resourcer -op:add -src:tmp\nw.exe -type:14 -name:IDR_MAINFRAME -file:resources\metrichor72x72.ico -lang:1033
 	copy /b tmp\nw.exe+bingocaller.nw dist\win\bingocaller.exe
 	copy tmp\icudt.dll dist\win
 	copy tmp\nw.pak dist\win
